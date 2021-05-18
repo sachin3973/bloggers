@@ -169,8 +169,8 @@ a {
 /* ==== Media Queries */
 @media screen and (min-width: 768px) {
   body {
-    margin-top: calc(var(--header-height) + 0.2rem);
-    padding: calc(var(--nav-width) + 0.2rem);
+    margin-top: calc(var(--header-height) + 2rem);
+    /* padding: calc(var(--nav-width) + 0.2rem); */
   }
 
   .header {
@@ -183,11 +183,8 @@ a {
     height: 40px;
   }
 
-  /* .header__img > img {
-    width: 40px;
-  } */
-
   .l-navbar {
+    bottom: 0;
     left: 0;
     padding: 1rem 1rem 0 0;
   }
@@ -204,25 +201,39 @@ a {
 }
 
 /* Posts */
-h3 {
+h3,
+h1 {
   text-shadow: 1px 1px 3px var(--first-color-light);
   font-weight: bold;
 }
 
-.container {
+.container__block {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-top: 2em;
 }
 
 .inner__container {
+  width: 500px;
+  max-width: 100%;
+  padding: 1em;
+  background-color: var(--white-color);
+  margin: 0.8em;
+  border-bottom: 3px solid var(--first-color-light);
+  border-right: 3px solid var(--first-color-light);
+  box-shadow: 3px 2px 4px var(--first-color-light);
+  transition: all 0.5s;
+  border-radius: 5px;
+}
+
+.content__section {
   background: transparent;
   width: 500px;
   max-width: 100%;
-  padding: 0.3em;
+  padding: 2em;
   background-color: var(--white-color);
-  margin: 0.8em;
+  margin-top: 1em;
   border-bottom: 3px solid var(--first-color-light);
   border-right: 3px solid var(--first-color-light);
   box-shadow: 3px 2px 4px var(--first-color-light);

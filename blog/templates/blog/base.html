@@ -34,7 +34,7 @@
       <div class="header__toggle">
         <i class="bx bx-menu" id="header-toggle"></i>
       </div>
-      <h3>Bloggers</h3>
+      <h3><a href="{% url 'blog-home' %}">Bloggers</a></h3>
       <div class="dark__mode">
         <i class="bx bx-moon bx-sm" id="darkmode-toggle"></i>
       </div>
@@ -74,20 +74,22 @@
               <span class="nav__name">Drafts</span>
             </a>
 
-            <a href="#" class="nav__link">
-              <i class="bx bx-bar-chart-alt-2 nav__icon"></i>
+            <a href="{% url 'register' %}" class="nav__link">
+              <i class="bx bxs-user-plus bx-sm nav__icon"></i>
               <span class="nav__name">Register</span>
             </a>
           </div>
         </div>
 
         <a href="#" class="nav__link">
-          <i class="bx bx-log-out nav__icon"></i>
+          <i class="bx nav__icon bx-log-in" id="login-toggle"></i>
           <span class="nav__name">Log Out</span>
         </a>
       </nav>
     </div>
-    {% block content %}{% endblock %}
+    {% if messages %} {% for message in messages %}
+    <div class="container alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %} {% endif %} {% block content %}{% endblock %}
 
     <!-- Main js-->
     <script src="{% static 'blog/main.js' %}"></script>

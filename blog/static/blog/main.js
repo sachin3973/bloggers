@@ -40,11 +40,20 @@ const darkModeToggle = (darkModeId) => {
   if (dark) {
     dark.addEventListener("click", () => {
       dark.classList.toggle("bx-sun");
-      document.getElementById("theme-style").href =
-        "{% static 'blog/dark.css' %}";
       console.log("dark");
     });
   }
 };
 
+const loginToggle = (loginId) => {
+  const login = document.getElementById(loginId);
+  if (login) {
+    login.addEventListener("click", () => {
+      login.classList.toggle("bx-log-out");
+      console.log("Clicked");
+    });
+  }
+};
+
 darkModeToggle("darkmode-toggle");
+loginToggle("login-toggle");

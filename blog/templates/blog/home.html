@@ -1,15 +1,15 @@
 {% extends "blog/base.html" %} {% block content %}
-<div class="container">
+<div class="container__block">
   {% for post in posts %}
   <article class="inner__container">
     <div class="inner__body">
       <div class="article__metadeta">
         <a href="" class="mr-2">{{ post.author }}</a>
-        <small class="text-muted">{{ post.date_posted }}</small>
+        <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
         <hr />
       </div>
       <h2><a href="" class="article__title">{{ post.title }}</a></h2>
-      <p class="article__content">{{ post.content }}</p>
+      <p class="article__content">{{ post.content | safe | linebreaksbr }}</p>
     </div>
   </article>
   {% endfor %}
