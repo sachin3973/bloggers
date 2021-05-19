@@ -4,8 +4,13 @@
   <article class="inner__container">
     <div class="inner__body">
       <div class="article__metadeta">
+        <img
+          class="article__img mb-1 mx-2"
+          src="{{ post.author.profile.image.url }}"
+          alt="Author Picture"
+        />
         <a href="{% url 'profile' %}" class="mr-2">{{ post.author }}</a>
-        <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+        <small>{{ post.date_posted|date:"F d, Y" }}</small>
         <hr />
       </div>
       <h2><a href="" class="article__title">{{ post.title }}</a></h2>

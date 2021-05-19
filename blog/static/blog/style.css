@@ -208,12 +208,26 @@ h1 {
   font-weight: bold;
 }
 
-a {
+.article__metadeta > a,
+h3 > a,
+small > a {
   color: var(--first-color);
+  text-shadow: 1px 1px 3px var(--first-color-light);
+}
+
+label {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  text-shadow: 1px 1px 3px var(--first-color-light);
+  font-weight: bold;
 }
 
 a:hover {
   color: var(--first-color);
+}
+
+span {
+  font-weight: bold;
 }
 
 .container__block {
@@ -224,16 +238,19 @@ a:hover {
 }
 
 .inner__container {
+  box-sizing: content-box;
   width: 500px;
   max-width: 100%;
   padding: 1em;
   background-color: var(--white-color);
   margin: 0.8em;
-  border-bottom: 3px solid var(--first-color-light);
-  border-right: 3px solid var(--first-color-light);
   box-shadow: 3px 2px 4px var(--first-color-light);
-  transition: all 0.5s;
+  transition: all 0.2s;
   border-radius: 5px;
+}
+
+.inner__container:hover {
+  transform: scale(1.02);
 }
 
 .content__section {
@@ -247,11 +264,6 @@ a:hover {
   box-shadow: 3px 2px 4px var(--first-color-light);
   transition: all 0.3s;
   border-radius: 5px;
-}
-
-.inner__container:hover {
-  cursor: pointer;
-  transform: scale(1.03);
 }
 
 .inner__body {
@@ -299,14 +311,27 @@ input {
 }
 
 .profile__img {
+  width: 300px;
   padding: 10px;
   max-width: 70%;
   border-radius: 50%;
-  border: 1px solid var(--white-color);
   box-shadow: 3px 2px 4px var(--first-color-light);
 }
 
 .user__email {
   font-size: 1.1rem;
+  text-shadow: 1px 1px 3px var(--first-color-light);
   font-weight: 700;
+}
+
+small {
+  color: #6e6e6e;
+  font-weight: bold;
+}
+
+.article__img {
+  width: 50px;
+  border-radius: 50%;
+  padding: 2px;
+  box-shadow: 1px 2px 2px var(--first-color-light);
 }

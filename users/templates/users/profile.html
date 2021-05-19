@@ -10,5 +10,17 @@
     <h3 class="mt-4">{{ user.username }}</h3>
     <p class="user__email">{{ user.email }}</p>
   </div>
+  <div class="content__section profile__container">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4"><h3>Profile Info</h3></legend>
+        {{ u_form|crispy }} {{ p_form|crispy }}
+      </fieldset>
+      <div class="from-group">
+        <button class="btn button-first mt-3" type="submit">Update</button>
+      </div>
+    </form>
+  </div>
 </div>
 {% endblock content %}
