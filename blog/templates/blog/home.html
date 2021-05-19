@@ -4,7 +4,7 @@
   <article class="inner__container">
     <div class="inner__body">
       <div class="article__metadeta">
-        <a href="" class="mr-2">{{ post.author }}</a>
+        <a href="{% url 'profile' %}" class="mr-2">{{ post.author }}</a>
         <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
         <hr />
       </div>

@@ -45,15 +45,4 @@ const darkModeToggle = (darkModeId) => {
   }
 };
 
-const loginToggle = (loginId) => {
-  const login = document.getElementById(loginId);
-  if (login) {
-    login.addEventListener("click", () => {
-      login.classList.toggle("bx-log-out");
-      console.log("Clicked");
-    });
-  }
-};
-
 darkModeToggle("darkmode-toggle");
-loginToggle("login-toggle");
