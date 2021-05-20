@@ -44,44 +44,43 @@
       <nav class="nav">
         <div>
           <a href="{% url 'blog-home' %}" class="nav__logo">
-            <i class="bx bx-layer nav__logo-icon"></i>
+            <i class="bx bx-layer nav__logo-icon bx-sm"></i>
             <span class="nav__logo-name">Bloggers</span>
           </a>
 
           <div class="nav__list">
             <a href="{% url 'blog-home' %}" class="nav__link active">
-              <i class="bx bx-grid-alt nav__icon"></i>
+              <i class="bx bx-grid-alt nav__icon bx-sm"></i>
               <span class="nav__name">Dashboard</span>
             </a>
-
-            <a href="{% url 'blog-about' %}" class="nav__link">
-              <i class="bx bx-user nav__icon"></i>
-              <span class="nav__name">About</span>
+            <a href="{% url 'post-create' %}" class="nav__link">
+              <i class="bx bx-comment-add bx-sm"></i>
+              <span class="nav__name">Create New</span>
             </a>
             {% if not user.is_authenticated %}
             <a href="{% url 'register' %}" class="nav__link">
-              <i class="bx bx-user-plus bx-sm nav__icon"></i>
+              <i class="bx bx-user-plus bx-sm nav__icon bx-sm"></i>
               <span class="nav__name">Register</span>
             </a>
             <a href="{% url 'login' %}" class="nav__link">
-              <i class="bx nav__icon bx-log-in" id="login-toggle"></i>
+              <i class="bx nav__icon bx-log-in bx-sm" id="login-toggle"></i>
               <span class="nav__name">Log In</span>
             </a>
             {% else %}
             <a href="#" class="nav__link">
-              <i class="bx bx-message-square-detail nav__icon"></i>
+              <i class="bx bx-message-square-detail nav__icon bx-sm"></i>
               <span class="nav__name">Notifications</span>
             </a>
+            <a href="{% url 'profile' %}" class="nav__link">
+              <i class="bx bx-user nav__icon bx-sm"></i>
+              <span class="nav__name">Profile</span>
+            </a>
             <a href="#" class="nav__link">
-              <i class="bx bx-folder nav__icon"></i>
+              <i class="bx bx-bookmark nav__icon bx-sm"></i>
               <span class="nav__name">Drafts</span>
             </a>
-            <a href="{% url 'profile' %}" class="nav__link">
-              <i class="bx bx-bookmark nav__icon"></i>
-              <span class="nav__name">Favourites</span>
-            </a>
             <a href="{% url 'logout' %}" class="nav__link">
-              <i class="bx nav__icon bx-log-out" id="login-toggle"></i>
+              <i class="bx nav__icon bx-log-out bx-sm" id="login-toggle"></i>
               <span class="nav__name">Log out</span>
             </a>
             {% endif %}
