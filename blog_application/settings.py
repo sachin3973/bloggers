@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,3 +136,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        # 'toolbar': None,  # You can change this based on your requirements.
+        'width': 'auto',
+
+    },
+}

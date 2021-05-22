@@ -1,11 +1,11 @@
 {% extends "blog/base.html" %} {% block content %}
 <div class="container__block">
-  <article class="inner__container">
+  <article class="content__section post-detail">
     <div class="inner__body">
       <div class="article__metadeta">
         <img
           class="article__img mb-1 mx-2"
-          src="{{ post.author.profile.image.url }}"
+          src="{{ object.author.profile.image.url }}"
           alt="Author Picture"
         />
         <a href="{% url 'profile' %}" class="mr-2">{{ object.author }}</a>
@@ -18,7 +18,8 @@
         {% endif %}
         <hr />
       </div>
-      <h2 class="article__title">{{ object.title }}</a></h2>
+      <h3 class="article__title mb-4">{{ object.title }}</a></h3>
+      <img class="mb-3" src="{{ object.cover_image.url }}" alt="Cover Image">
       <p class="article__content">{{ object.content | safe | linebreaksbr }}</p>
     </div>
   </article>

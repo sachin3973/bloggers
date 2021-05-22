@@ -46,6 +46,29 @@ a {
   text-decoration: none;
 }
 
+h3,
+h1,
+h4 > a {
+  text-shadow: 1px 1px 3px var(--first-color-light);
+  font-weight: bold;
+  color: #2e2e31;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  text-shadow: 1px 1px 3px var(--first-color-light);
+  font-weight: bold;
+}
+
+span {
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--first-color);
+}
+
 /* Header */
 .header {
   width: 100%;
@@ -79,7 +102,9 @@ a {
   overflow: hidden;
 }
 
-.dark__mode > i {
+.dark__mode > i,
+.article__metadeta > i,
+.lower__container > i {
   color: var(--first-color);
   cursor: pointer;
 }
@@ -201,33 +226,12 @@ a {
   }
 }
 
-/* Posts */
-h3,
-h1 {
-  text-shadow: 1px 1px 3px var(--first-color-light);
-  font-weight: bold;
-}
-
+/* Posts Lists*/
 .article__metadeta > a,
 h3 > a,
 small > a {
   color: var(--first-color);
   text-shadow: 1px 1px 3px var(--first-color-light);
-}
-
-label {
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-  text-shadow: 1px 1px 3px var(--first-color-light);
-  font-weight: bold;
-}
-
-a:hover {
-  color: var(--first-color);
-}
-
-span {
-  font-weight: bold;
 }
 
 .container__block {
@@ -239,7 +243,7 @@ span {
 
 .inner__container {
   box-sizing: content-box;
-  width: 500px;
+  width: 320px;
   max-width: 100%;
   padding: 1em;
   background-color: var(--white-color);
@@ -264,6 +268,24 @@ span {
   box-shadow: 3px 2px 4px var(--first-color-light);
   transition: all 0.3s;
   border-radius: 5px;
+}
+
+/* Posts Detail */
+.post-detail > p {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.post-detail {
+  width: 800px;
+}
+
+.inner__body {
+  text-align: center;
+}
+
+.inner__body > img {
+  width: 100%;
 }
 
 .inner__body {
@@ -297,7 +319,8 @@ span {
   border: 1px solid var(--white-color);
 }
 
-input {
+input,
+textarea {
   background-color: var(--white-color);
   box-shadow: inset 3px 3px 3px var(--first-color-light),
     inset -6px -6px 3px #ffffff;
@@ -334,4 +357,14 @@ small {
   border-radius: 50%;
   padding: 2px;
   box-shadow: 1px 2px 2px var(--first-color-light);
+}
+
+.article__content {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.lower__container {
+  display: flex;
+  justify-content: space-around;
 }

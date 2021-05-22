@@ -5,20 +5,26 @@
     <div class="inner__body">
       <div class="article__metadeta">
         <img
-          class="article__img mb-1 mx-2"
+          class="article__img mb-1"
           src="{{ post.author.profile.image.url }}"
           alt="Author Picture"
         />
         <a href="{% url 'profile' %}" class="mr-2">{{ post.author }}</a>
         <small>{{ post.date_posted|date:"F d, Y" }}</small>
+        <i class="bx bx-bookmark-alt bx-sm ms-3"></i>
         <hr />
       </div>
-      <h2>
+      <img class="mb-3" src="{{ post.cover_image.url }}" alt="Cover Image" />
+      <h4>
         <a href="{% url 'post-detail' post.id %}" class="article__title"
           >{{ post.title }}</a
         >
-      </h2>
-      <p class="article__content">{{ post.content | safe | linebreaksbr }}</p>
+      </h4>
+    </div>
+    <hr />
+    <div class="lower__container">
+      <i class="bx bx-upvote bx-sm"></i>
+      <i class="bx bx-comment-detail bx-sm"></i>
     </div>
   </article>
   {% endfor %}
