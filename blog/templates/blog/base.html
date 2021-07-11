@@ -24,9 +24,9 @@
     <link id="theme-style" rel="stylesheet" href="" />
 
     {% if title %}
-    <title>Bloggers - {{ title }}</title>
+    <title>DeVerse Blogs - {{ title }}</title>
     {% else %}
-    <title>Bloggers</title>
+    <title>DeVerse Blogs</title>
     {% endif %}
   </head>
   <body id="body-pd">
@@ -34,7 +34,9 @@
       <div class="header__toggle">
         <i class="bx bx-menu mt-1" id="header-toggle"></i>
       </div>
-      <h3 class="mt-1"><a href="{% url 'blog-home' %}">Bloggers</a></h3>
+      <h3 class="mt-1">
+        <a href="{% url 'blog-home' %}">DeVerse Blogs</a>
+      </h3>
       <div class="dark__mode">
         <i class="bx bx-moon bx-sm" id="darkmode-toggle"></i>
       </div>

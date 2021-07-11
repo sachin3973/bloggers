@@ -118,7 +118,7 @@ a:hover {
   height: 100vh;
   background-color: var(--first-color);
   padding: 0.5rem 1rem 0 0;
-  transition: 0.5s;
+  transition: 0.2s;
   z-index: var(--z-fixed);
 }
 
@@ -271,11 +271,6 @@ small > a {
 }
 
 /* Posts Detail */
-.post-detail > p {
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
 .post-detail {
   width: 800px;
 }
@@ -290,6 +285,12 @@ small > a {
 
 .inner__body {
   margin: 0.5rem;
+}
+
+.inner__body > p {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: justify;
 }
 
 .inner__body > h2 > a {
