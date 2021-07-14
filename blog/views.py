@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.decorators import login_required
 from .forms import CommentForm
 from .models import Post, Comment
 
@@ -73,16 +74,19 @@ def add_comment_to_post(request, pk):
     return render(request, 'blog/add_comment_to_post.html', {'form': form})
 
 
+@login_required
 def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post-detail', pk=comment.post.pk)
 
 
+@login_required
 def comment_approve(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.approve()
     return redirect('post-detail', pk=comment.post.pk)
+
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
