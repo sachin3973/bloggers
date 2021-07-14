@@ -22,6 +22,21 @@
       <img class="mb-3" src="{{ object.cover_image.url }}" alt="Cover Image">
       <p class="article__content">{{ object.content | safe | linebreaksbr }}</p>
     </div>
+    <hr>
+    <a class="btn btn-primary mt-3 mb-3" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+    {% for comment in post.comments.all %}
+      <div class="comment">
+        <div class="date">
+          <small>{{ comment.created_date }}</small>
+        </div>
+        <a href="{% url 'profile' %}" class="mr-2">{{ comment.author }}</a>
+        <p>{{ comment.text }}</p>
+      </div>
+
+    {% empty %}
+      <p>No comments yet...</p>
+      
+    {% endfor %}
   </article>
 </div>
 {% endblock content %}

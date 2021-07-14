@@ -298,7 +298,8 @@ small > a {
   text-shadow: 1px 1px 3px var(--first-color-light);
 }
 
-.article__metadeta > a {
+.article__metadeta > a,
+.comment > a {
   font-weight: 700;
 }
 

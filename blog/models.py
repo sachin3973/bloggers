@@ -20,7 +20,13 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
 
-    # def save(self):
-    #     super().save()
-    #     img = Image.open(self.cover_image.path)
-    #     img.save(self.cover_image.path)
+
+class Comment(models.Model):
+    post = models.ForeignKey(
+        'blog.Post', on_delete=models.CASCADE, related_name="comments")
+    author = models.CharField(max_length=200)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.text
