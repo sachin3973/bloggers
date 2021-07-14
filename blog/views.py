@@ -79,5 +79,10 @@ def comment_remove(request, pk):
     return redirect('post-detail', pk=comment.post.pk)
 
 
+def comment_approve(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.approve()
+    return redirect('post-detail', pk=comment.post.pk)
+
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})

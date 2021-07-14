@@ -9,7 +9,7 @@
           src="{{ post.author.profile.image.url }}"
           alt="Author Picture"
         />
-        <a href="{% url 'profile' %}" class="mr-2">{{ post.author }}</a>
+        <a href="{% url 'profile' %}" class="me-2">{{ post.author }}</a>
         <small>{{ post.date_posted|date:"F d, Y" }}</small>
         <i class="bx bx-bookmark-alt bx-sm ms-3"></i>
         <hr />
@@ -23,8 +23,12 @@
     </div>
     <hr />
     <div class="lower__container">
+      <a class="fs-4" href="{% url 'post-detail' pk=post.pk %}"
+        >{{ post.approved_comments.count }}<i
+          class="bx bx-comment-detail bx-sm ms-2"
+        ></i
+      ></a>
       <i class="bx bx-upvote bx-sm"></i>
-      <i class="bx bx-comment-detail bx-sm"></i>
     </div>
   </article>
   {% endfor %}
