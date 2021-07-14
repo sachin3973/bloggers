@@ -28,6 +28,9 @@
       <div class="comment">
         <div class="date">
           <small>{{ comment.created_date }}</small>
+          <a href="{% url 'comment-remove' pk=comment.pk %}" class="text-danger border border-danger px-1 rounded-circle ms-3">
+            <i class='bx bxs-trash-alt bx-xs'></i>
+          </a>
         </div>
         <a href="{% url 'profile' %}" class="mr-2">{{ comment.author }}</a>
         <p>{{ comment.text }}</p>
